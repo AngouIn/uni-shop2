@@ -118,7 +118,7 @@
 		margin: 15px 0;
 		
 		.nav_img {
-			height: 125rpx;
+			height: 150rpx;
 			width: 140rpx;
 		}
 	}
