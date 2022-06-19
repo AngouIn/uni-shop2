@@ -114,7 +114,8 @@
 <style lang="scss">
 	.goods-detail-container {
 		// 防止信息被商品导航遮住
-		padding-bottom: 50px;  
+		padding-bottom: 90px;
+		background-color: #efefef;
 	}
 	
 	
@@ -129,11 +130,14 @@
 
 	.goods-info-box {
 		padding: 10px;
+		border-radius: 8px;
+		background-color: #fff;
+		margin: 8px;
 
 		.goods-price {
 			font-size: 18px;
 			color: #c00000;
-			margin: 10px 0;
+			margin: 15px 0;
 		}
 
 		.goods-info-body {
@@ -160,7 +164,7 @@
 		.yf {
 			font-size: 12px;
 			color: gray;
-			margin: 10px 0;
+			margin: 15px 0 20px 0;
 		}
 	}
 	
@@ -170,6 +174,8 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		height: 90px;
+		background-color: #fff;
 	}
 	
 </style>
