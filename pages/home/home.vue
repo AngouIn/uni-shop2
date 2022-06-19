@@ -1,5 +1,9 @@
 <template>
 	<view>
+		<view class="search-box">
+			<my-search @searchClick="gotoSearch"></my-search>
+		</view>
+		
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="(item, i) in swiperList" :key="i">
 				<navigator class="swiper-item" :url="'/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id">
@@ -90,6 +94,12 @@
 						url:'../my/my'
 					})
 				} 
+			},
+			
+			gotoSearch() {
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
 			}
 		},
 
@@ -102,6 +112,13 @@
 </script>
 
 <style lang="scss">
+	.search-box {
+		// 实现搜索框的吸顶效果
+		position: sticky;
+		top: 0;
+		z-index: 999;  // 防止被覆盖
+	}
+	
 	swiper {
 		height: 330rpx;
 

@@ -4,4 +4,5 @@ export default {
 	floor: '/api/public/v1/home/floordata', 		// 楼层
 	cate_list: '/api/public/v1/categories',  // 商品分类
 	goods_detail: '/api/public/v1/goods/detail',
+	qsearch: '/api/public/v1/goods/qsearch',   // 商品搜索
 }

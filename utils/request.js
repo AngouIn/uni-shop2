@@ -1,6 +1,6 @@
 const baseUrl = 'https://api-ugo-web.itheima.net'
 
-export function $http(url, method = 'GET', data) {
+export function $http(url, data, method = 'GET') {
 	uni.showLoading({
 		title:'加载中...'
 	})
