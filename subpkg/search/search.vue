@@ -20,7 +20,7 @@
 		
 		<!-- 搜索结果列表 -->
 		<view class="sugg-list" v-else>
-			<view class="sugg-item" v-for="(item, i) in searchResults" :key="item.goods_id" @click="togoDetail(item.goods_id)">
+			<view class="sugg-item" v-for="(item, i) in searchResults" :key="item.goods_id" @click="gotoDetail(item.goods_id)">
 				<view class="goods-name">{{ item.goods_name }}</view>
 				<uni-icons type="arrowright" size="16"></uni-icons>
 			</view>
@@ -96,7 +96,6 @@
 					content:'确认清空全部搜索记录？',
 					success: (res) => {
 						if(res.confirm) {
-							console.log(111)
 							this.historyList = []
 							uni.setStorageSync('kw', '[]')
 						}

@@ -34,6 +34,7 @@
 </template>
 
 <script>
+	import { mapState, mapMutations, mapGetters } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -48,7 +49,7 @@
 					{
 						icon: 'cart',
 						text: '购物车',
-						info: 2
+						info: 0
 					}
 				],
 				// 右侧按钮
@@ -67,8 +68,38 @@
 
 			};
 		},
+		
+		computed: {
+			...mapState({
+				cart: state => state.m_cart.cart
+			}),
+			
+			...mapGetters('m_cart', ['total'])
+		},
+		
+		watch: {
+			// total(newVal) {
+			// 	let findResult = this.options.find((x) => x.text === '购物车')
+			// 	if(findResult){
+			// 		findResult.info = newVal
+			// 	}
+			// }
+			// 以对象形式定义，可以解决首次加载时 不能显示购物车商品数量问题
+			total: {
+				handler(newVal) {
+					let findResult = this.options.find((x) => x.text === '购物车')
+					if(findResult){
+						findResult.info = newVal
+					}
+				},
+				// 页面加载完毕立即调用
+				immediate: true
+			}
+		},
 
 		methods: {
+			...mapMutations('m_cart', ['addToCart']),
+			
 			async getGoodsDetail(goods_id) {
 				let {
 					data: res
@@ -101,7 +132,17 @@
 			},
 			
 			buttonClick(e) {
-				uni.$showMsg('没钱买！')
+				if(e.content.text === '加入购物车'){
+					const goods = {
+						goods_id: this.goods_info.goods_id,
+						goods_name: this.goods_info.goods_name,
+						goods_price: this.goods_info.goods_price,
+						goods_count: 1,
+						goods_small_logo: this.goods_info.goods_small_logo,
+						goods_state: true   // 商品勾选状态
+					}
+					this.addToCart(goods)
+				}
 			}
 		},
 
