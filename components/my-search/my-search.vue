@@ -20,7 +20,7 @@
 		props: {
 			bgcolor: {
 				type: String,
-				default: '#D45250'
+				default: '#c00000'
 			},
 			// 圆角尺寸
 			radius: {

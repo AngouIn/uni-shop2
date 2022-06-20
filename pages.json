@@ -56,7 +56,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "拼夕夕",
-		"navigationBarBackgroundColor": "#D45250", //"#C00000"
+		"navigationBarBackgroundColor": "#c00000", //"#C00000"
 		"backgroundColor": "#FFFFFF",
 		"app-plus": {
 			"background": "#FFFFFF"

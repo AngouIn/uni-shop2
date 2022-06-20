@@ -6,4 +6,5 @@ export default {
 	goods_detail: '/api/public/v1/goods/detail',
 	qsearch: '/api/public/v1/goods/qsearch',   // 商品搜索
 	goodsList: '/api/public/v1/goods/search',  // 商品列表
+	token: '/api/public/v1/users/wxlogin',   // 登录接口
 }
